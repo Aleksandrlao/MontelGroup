@@ -6,7 +6,7 @@ jQuery(document).ready(function($) {
 // nav active
   $('.h_nav-btn').on('click', function(event) {
     event.preventDefault();
-    $('.h_nav').toggleClass('active');
+    $('.h_menu, .h_nav-btn').toggleClass('active');
   });
 
 
