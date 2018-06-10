@@ -3,11 +3,37 @@ jQuery(document).ready(function($) {
 // fancybox
 	$('.fancybox').fancybox();
 
+
+
+// WOW
+  wow = new WOW({
+    boxClass:     'wow',      // default
+    animateClass: 'animated', // default
+    offset:       40,          // default
+    mobile:       false,       // default
+    live:         true        // default
+  });
+  wow.init();
+
+
+
 // nav active
   $('.h_nav-btn').on('click', function(event) {
     event.preventDefault();
     $('.h_menu, .h_nav-btn').toggleClass('active');
   });
+
+
+// scroll fixed nav
+  var $menu = $(".header");
+  $(window).scroll(function(){
+      if ( $(this).scrollTop() > 0 && $menu.hasClass("default") ){
+          $menu.removeClass("default").addClass("fixed");
+      } else if($(this).scrollTop() <= 0 && $menu.hasClass("fixed")) {
+          $menu.removeClass("fixed").addClass("default");
+      }
+  });
+
 
 
 // Slider
